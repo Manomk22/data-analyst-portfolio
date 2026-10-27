@@ -1,0 +1,151 @@
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.project-card {
+  display: flex;
+  height: 100%;
+  min-height: 390px;
+  flex-direction: column;
+  padding: 21px;
+  border: 1px solid #e3eaf0;
+  border-radius: 14px;
+  background: #fff;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #c8e2e2;
+  box-shadow: 0 16px 34px #1a35430c;
+}
+
+.card-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8995a3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.card-arrow {
+  color: #087f8c;
+  font-size: 18px;
+}
+
+/* Dashboard screenshot preview */
+.project-preview {
+  display: flex;
+  width: 100%;
+  height: 170px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 18px 0;
+  border: 1px solid #e7edf2;
+  border-radius: 10px;
+  background: #f4f8fa;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-symbol {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 14px;
+  color: #087f8c;
+  background: #e4f5f2;
+  font-size: 30px;
+}
+
+.symbol-coffee {
+  color: #875c3e;
+  background: #f7eee4;
+}
+
+.symbol-market {
+  color: #236a7b;
+  background: #e4f4f6;
+}
+
+.project-category {
+  margin: 0 0 8px;
+  color: #087f8c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+}
+
+.project-card h2 {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.4px;
+}
+
+.project-summary {
+  margin: 0;
+  color: #718092;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 17px;
+}
+
+.project-tags span {
+  padding: 5px 7px;
+  border: 1px solid;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.details-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 17px 0 0;
+  border: 0;
+  color: #087f8c;
+  background: transparent;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  color: #075e68;
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 17px;
+  }
+
+  .project-preview {
+    height: 145px;
+  }
+}

@@ -1,0 +1,51 @@
+
+<article class="project-card">
+  <div class="card-topline">
+    <span class="project-number">
+      PROJECT {{ project.id.toString().padStart(2, '0') }}
+    </span>
+    <span class="card-arrow">↗</span>
+  </div>
+
+  <!-- Show the dashboard screenshot when available -->
+  <div class="project-preview">
+   <img
+  *ngIf="project.pictures?.length && !imageError"
+  [src]="project.pictures[0]"
+  [alt]="project.name + ' Power BI dashboard'"
+  (error)="onImageError()"
+/>
+
+<div
+  *ngIf="!project.pictures?.length || imageError"
+  class="card-symbol"
+  [class.symbol-coffee]="project.id === 1"
+  [class.symbol-market]="project.id === 2"
+>
+  <span *ngIf="project.id === 1">☕</span>
+  <span *ngIf="project.id === 2">▥</span>
+</div>
+  </div>
+
+  <p class="project-category">
+    {{ project.id === 1 ? 'BUSINESS INTELLIGENCE' : 'RETAIL ANALYTICS' }}
+  </p>
+
+  <h2>{{ project.name }}</h2>
+
+  <p class="project-summary">{{ project.summary }}</p>
+
+  <div class="project-tags">
+    <span
+      *ngFor="let tag of project.tag"
+      [style.color]="tag.color"
+      [style.border-color]="tag.color + '44'"
+    >
+      {{ tag }}
+    </span>
+  </div>
+
+  <button class="details-button" (click)="openPopup()">
+    Explore project <span aria-hidden="true">→</span>
+  </button>
+</article>

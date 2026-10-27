@@ -1,0 +1,17 @@
+<main class="portfolio-page">
+  <section class="portfolio-intro">
+    <p class="eyebrow">PROJECT LIBRARY</p>
+    <h1>Projects & analysis</h1>
+    <p>Selected work using business intelligence, SQL, spreadsheets, and reporting automation. Each project is presented with its purpose, tools, and the business questions it explores.</p>
+  </section>
+  <div class="filter-bar">
+    <span class="filter-label">FILTER BY TOOL</span>
+    <button *ngFor="let tag of tags" class="filter-chip" [class.selected]="selectedTag === tag" (click)="filterProjects(tag)">{{ tag }}</button>
+    <button class="filter-chip reset-chip" (click)="resetFilter()">All projects</button>
+  </div>
+  <div class="portfolio-grid">
+    <app-project-card *ngFor="let project of filteredProjects" [project]="project" (viewMore)="openPopup(project)"></app-project-card>
+  </div>
+  <p class="portfolio-footnote">Project descriptions will be updated with repository links, screenshots, and verified findings as each project is published.</p>
+  <app-popup [project]="selectedProject" [isVisible]="showPopup" (close)="closePopup()"></app-popup>
+</main>

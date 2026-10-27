@@ -1,0 +1,13 @@
+:host { display:block; }
+.site-header { max-width:1180px; margin:0 auto; padding:24px 28px 18px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.brand { display:flex; align-items:center; gap:12px; color:#172033; text-decoration:none; font-size:18px; font-weight:800; letter-spacing:-.4px; }
+.brand-mark { display:grid; place-items:center; width:42px; height:42px; border-radius:12px; color:#fff; background:#087f8c; font-size:21px; }
+.brand-dot { color:#087f8c; }
+.brand small { display:block; margin-top:3px; color:#82909e; font-size:8px; font-weight:800; letter-spacing:1.7px; }
+.header-right { display:flex; align-items:center; gap:20px; }
+.header-right p { margin:0; color:#718092; font-size:12px; font-weight:600; }
+.header-right p span { color:#0b9a84; padding:0 4px; }
+.social-links { display:flex; gap:9px; }
+.social-links a { display:grid; place-items:center; width:34px; height:34px; border:1px solid #e2e9ee; border-radius:9px; }
+.social-links img { width:17px; height:17px; object-fit:contain; }
+@media(max-width:600px){ .site-header{padding:18px 17px 13px}.brand{font-size:15px}.brand-mark{width:36px;height:36px}.header-right p{display:none} }

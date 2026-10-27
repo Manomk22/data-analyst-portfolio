@@ -1,0 +1,65 @@
+<!-- 
+   <div class="container mx-auto py-8">
+    <p class="mb-3 text-xs font-extrabold uppercase tracking-[2px] text-teal-700">BACKGROUND</p>
+    <h1 class="mb-3 text-4xl font-extrabold tracking-tight text-slate-900">Experience, skills & education</h1>
+    <p class="mb-7 max-w-3xl text-sm leading-7 text-slate-600">A summary of my data operations experience and current focus on SQL, Excel, and Power BI. An updated downloadable Data Analyst resume will be added here.</p>
+  </div>
+  
+  <div class="container mx-auto">
+    <div class="bg-white shadow-md rounded-lg p-5">
+      <div class="accordion">
+        <div *ngFor="let section of sections; let i = index" class="mb-4">
+          <div class="accordion-header p-4 cursor-pointer bg-blue-500 hover:bg-blue-600 text-white flex justify-between items-center rounded-lg" (click)="toggleSection(i)">
+            <h2 class="font-semibold text-lg">{{ section.title }}</h2>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div [class.hidden]="!section.isOpen" class="accordion-body p-4   rounded-b-lg">
+            <div class="p-3 rounded-lg mb-2">
+              <h3 class="text-lg font-semibold">Brief Summary</h3>
+              <p class="text-base">A brief introduction or summary can go here.</p>
+            </div>
+            <div class="p-3 rounded-lg mb-2">
+              <h3 class="text-lg font-semibold">Details</h3>
+              <p class="text-base">{{ section.content }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+   <div class="container mx-auto py-8">
+    <p class="mb-3 text-xs font-extrabold uppercase tracking-[2px] text-teal-700">BACKGROUND</p>
+    <h1 class="mb-3 text-4xl font-extrabold tracking-tight text-slate-900">Experience, skills & education</h1>
+   <p>
+  Download my latest Data Analyst resume, featuring my experience,
+  SQL and Excel skills, Power BI projects, and education.
+</p>
+
+<a
+  class="download-btn"
+  href="assets/DAWA_Manojkumar.pdf"
+  download="Manojkumar_Data_Analyst_Resume.pdf">
+  <span>Download Resume</span>
+  <span class="download-icon" aria-hidden="true">↓</span>
+</a>
+  
+  <div class="container mx-auto ">
+    <div class="bg-white shadow-md rounded-lg p-5 border-t-2">
+      <div class="accordion">
+        <div *ngFor="let section of sections; let i = index" class="mb-4">
+          <div class="accordion-header p-4 cursor-pointer bg-blue-500 hover:bg-blue-600 text-white flex justify-between items-center rounded-lg" (click)="toggleSection(i)">
+            <h2 class="font-semibold text-lg">{{ section.title }}</h2>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div [class.hidden]="!section.isOpen" class="accordion-body p-4 rounded-b-lg">
+            <div *ngFor="let content of section.content" class="p-3 rounded-lg mb-2">
+              <h3 class="text-lg font-semibold">{{ content.heading }}</h3>
+              <p class="text-base">{{ content.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

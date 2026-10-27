@@ -1,0 +1,20 @@
+<div *ngIf="isVisible" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4" (click)="closePopup()">
+  <section class="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-7 shadow-2xl" role="dialog" aria-modal="true" [attr.aria-label]="project.name" (click)="$event.stopPropagation()">
+    <button type="button" (click)="closePopup()" aria-label="Close project details" class="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">✕</button>
+    <p class="mb-3 text-xs font-bold uppercase tracking-[2px] text-teal-700">Project overview</p>
+    <h2 class="mb-4 pr-10 text-3xl font-extrabold tracking-tight text-slate-900">{{project.name}}</h2>
+    <div *ngIf="project.pictures && project.pictures.length > 0" class="relative mb-5 flex items-center justify-center">
+      <button type="button" (click)="prevImage()" aria-label="Previous image" class="absolute left-2 z-10 rounded-full bg-slate-800 px-3 py-2 text-white">‹</button>
+      <img [src]="project.pictures[currentIndex]" alt="Project screenshot" class="mx-auto max-h-72 w-full rounded-lg object-contain">
+      <button type="button" (click)="nextImage()" aria-label="Next image" class="absolute right-2 z-10 rounded-full bg-slate-800 px-3 py-2 text-white">›</button>
+    </div>
+    <p class="mb-6 text-sm leading-7 text-slate-600">{{project.description}}</p>
+    <div class="mb-6 flex flex-wrap gap-2">
+      <span *ngFor="let tag of project.tag" class="rounded-md border px-3 py-1.5 text-xs font-semibold" [style.color]="tag.color" [style.border-color]="tag.color + '44'">{{tag}}</span>
+    </div>
+    <div *ngIf="project.projectLink" class="border-t border-slate-100 pt-5">
+      <a [href]="project.projectLink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-4 py-3 text-sm font-bold text-white no-underline hover:bg-teal-800">View project link <span aria-hidden="true">↗</span></a>
+    </div>
+    <p *ngIf="!project.projectLink" class="border-t border-slate-100 pt-5 text-xs text-slate-400">Repository and live dashboard links will be added when the project is published.</p>
+  </section>
+</div>

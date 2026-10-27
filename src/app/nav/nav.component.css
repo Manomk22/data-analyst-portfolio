@@ -1,0 +1,6 @@
+:host { display:block; }
+.site-nav { margin:0 auto 8px; border-top:1px solid #edf0f3; border-bottom:1px solid #e8edf1; background:#ffffffd9; }
+.nav-inner { max-width:1180px; margin:0 auto; padding:0 28px; display:flex; gap:29px; align-items:center; min-height:49px; }
+.nav-inner a { display:flex; align-items:center; height:49px; border-bottom:2px solid transparent; color:#687587; text-decoration:none; font-size:13px; font-weight:700; transition:color .2s; }
+.nav-inner a:hover,.nav-inner a.active { color:#087f8c; border-bottom-color:#087f8c; }
+@media(max-width:600px){ .nav-inner{padding:0 17px;gap:19px;overflow-x:auto}.nav-inner a{white-space:nowrap;font-size:12px} }
