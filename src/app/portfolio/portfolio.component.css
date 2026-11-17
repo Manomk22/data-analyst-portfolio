@@ -1,15 +1,176 @@
-:host { display:block; }
-.portfolio-page { max-width:1180px; margin:0 auto; padding:32px 28px 70px; color:#172033; }
-.portfolio-intro { max-width:720px; margin-bottom:32px; }
-.eyebrow { margin:0 0 10px; color:#087f8c; font-size:11px; font-weight:800; letter-spacing:2px; }
-.portfolio-intro h1 { margin:0 0 14px; font-size:clamp(36px,5vw,52px); font-weight:800; line-height:1.1; letter-spacing:-1.8px; }
-.portfolio-intro>p:last-child { max-width:670px; margin:0; color:#718092; font-size:15px; line-height:1.8; }
-.filter-bar { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:23px; padding:14px; border:1px solid #e6edf1; border-radius:12px; background:#f8fbfc; }
-.filter-label { margin:0 8px 0 2px; color:#7a8796; font-size:9px; font-weight:800; letter-spacing:1.3px; }
-.filter-chip { padding:7px 11px; border:1px solid #dfe7ec; border-radius:7px; color:#536174; background:#fff; font-size:11px; font-weight:700; cursor:pointer; }
-.filter-chip:hover,.filter-chip.selected { border-color:#087f8c; color:#087f8c; background:#eaf7f5; }
-.reset-chip { margin-left:auto; }
-.portfolio-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; align-items:stretch; }
-.portfolio-footnote { margin:22px 0 0; color:#84909e; font-size:12px; line-height:1.7; }
-@media(max-width:850px){.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.portfolio-page{padding:25px 17px 45px}.portfolio-grid{grid-template-columns:1fr}.reset-chip{margin-left:0}.portfolio-intro h1{letter-spacing:-1px}}
+
+:host {
+  display: block;
+  background: #f8f7ff;
+  min-height: 100%;
+}
+
+.portfolio-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 28px 75px;
+  color: #17132b;
+}
+
+/* Page introduction */
+
+.portfolio-intro {
+  max-width: 760px;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.portfolio-intro h1 {
+  margin: 0 0 16px;
+  color: #17132b;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.portfolio-intro > p:last-child {
+  max-width: 670px;
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Filter container */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #e8e4f5;
+  border-radius: 14px;
+  background: linear-gradient(
+    110deg,
+    #f5f3ff,
+    #eff6ff
+  );
+}
+
+.filter-label {
+  margin: 0 9px 0 2px;
+  color: #776b91;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+/* Filter chips */
+
+.filter-chip {
+  padding: 8px 13px;
+  border: 1px solid #e5def7;
+  border-radius: 9px;
+  color: #625879;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.filter-chip:hover {
+  transform: translateY(-2px);
+  border-color: #a78bfa;
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+/* Selected filter */
+
+.filter-chip.selected {
+  border-color: #8b5cf6;
+  color: #ffffff;
+  background: linear-gradient(
+    110deg,
+    #8b5cf6,
+    #6366f1
+  );
+  box-shadow: 0 5px 14px #8b5cf62b;
+}
+
+.filter-chip.selected:hover {
+  color: #ffffff;
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+/* Reset button */
+
+.reset-chip {
+  margin-left: auto;
+}
+
+/* Project grid */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Footer note */
+
+.portfolio-footnote {
+  margin: 25px 0 0;
+  color: #8b83a3;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .portfolio-page {
+    padding: 25px 17px 45px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reset-chip {
+    margin-left: 0;
+  }
+
+  .portfolio-intro h1 {
+    letter-spacing: -1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter-chip {
+    transition: none;
+  }
+}

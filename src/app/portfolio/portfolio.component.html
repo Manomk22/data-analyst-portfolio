@@ -12,6 +12,6 @@
   <div class="portfolio-grid">
     <app-project-card *ngFor="let project of filteredProjects" [project]="project" (viewMore)="openPopup(project)"></app-project-card>
   </div>
-  <p class="portfolio-footnote">Project descriptions will be updated with repository links, screenshots, and verified findings as each project is published.</p>
+  <p class="portfolio-footnote"></p>
   <app-popup [project]="selectedProject" [isVisible]="showPopup" (close)="closePopup()"></app-popup>
 </main>

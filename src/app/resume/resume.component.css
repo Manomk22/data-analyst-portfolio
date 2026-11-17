@@ -1,40 +1,240 @@
 
+:host {
+  display: block;
+  background: #f8f7ff;
+  min-height: 100%;
+}
+
+.resume-page {
+  padding: 42px 28px 80px;
+  color: #17132b;
+}
+
+.resume-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Introduction */
+
+.resume-intro {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.resume-intro h1 {
+  margin: 0 0 16px;
+  color: #17132b;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.resume-description {
+  max-width: 750px;
+  margin: 0 0 23px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Download button */
+
 .download-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
   padding: 10px 12px 10px 22px;
-  background: #2563eb;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
+  border: 1px solid #8b5cf6;
+  border-radius: 10px;
+  color: #ffffff;
+  background: linear-gradient(110deg, #8b5cf6, #6366f1);
+  box-shadow: 0 8px 22px #8b5cf633;
   text-decoration: none;
-  border: 1px solid #2563eb;
-  border-radius: 9px;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-.download-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.18);
-  font-size: 22px;
-  line-height: 1;
-  transition: transform 0.25s ease;
+  font-size: 14px;
+  font-weight: 800;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .download-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #8b5cf64d;
+}
+
+.download-icon {
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  border-radius: 7px;
+  background: #ffffff2e;
+  font-size: 22px;
+  transition: transform .2s;
 }
 
 .download-btn:hover .download-icon {
-  transform: translateY(2px);
+  transform: translateY(3px);
+}
+
+/* Main card */
+
+.resume-card {
+  padding: 25px;
+  border: 1px solid #e8e4f5;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px #17132b0a;
+}
+
+/* Accordion */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accordion-item {
+  overflow: hidden;
+  border: 1px solid #e8e4f5;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+.accordion-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 19px 22px;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(110deg, #8b5cf6, #6366f1);
+  text-align: left;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter .2s;
+}
+
+.accordion-header:hover {
+  filter: brightness(.94);
+}
+
+
+.accordion-arrow {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background .2s ease;
+}
+
+.chevron {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 2.5px solid #ffffff;
+  border-bottom: 2.5px solid #ffffff;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .25s ease;
+}
+
+/* Arrow points upward when open */
+.accordion-arrow.rotated .chevron {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.accordion-header:hover .accordion-arrow {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+
+/* Accordion content */
+
+.accordion-body {
+  padding: 24px;
+  background: #ffffff;
+}
+
+.experience-entry {
+  padding: 15px 17px;
+  margin-bottom: 12px;
+  border: 1px solid #ede9fe;
+  border-left: 4px solid #8b5cf6;
+  border-radius: 10px;
+  background: #faf9ff;
+}
+
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+.experience-entry h3 {
+  margin: 0 0 9px;
+  color: #17132b;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.experience-entry p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Accessibility */
+
+.accordion-header:focus-visible,
+.download-btn:focus-visible {
+  outline: 3px solid #ff6b6b;
+  outline-offset: 3px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .resume-page {
+    padding: 28px 17px 50px;
+  }
+
+  .resume-card {
+    padding: 14px;
+  }
+
+  .accordion-header {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .accordion-body {
+    padding: 14px;
+  }
+
+  .experience-entry {
+    padding: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-btn,
+  .download-icon,
+  .accordion-header,
+  .accordion-arrow {
+    transition: none;
+  }
 }

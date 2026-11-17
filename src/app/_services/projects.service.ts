@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { project } from '../_models/project';
 import { tag } from '../_models/tag';
@@ -24,6 +25,17 @@ export class ProjectsService {
       projectLink: '',
       pictures: [
         'assets/projects/Hyperdata.png'
+      ],
+      tag: [tag.POWERBI, tag.DAX, tag.ANALYTICS]
+    },
+    {
+      id: 3,
+      name: 'Job Market Intelligence',
+      summary: 'End-to-end job market analytics using Python, PostgreSQL, SQL, DAX and Power BI.',
+      description: 'Collected and analyzed 300 job listings from the Arbeitnow API using Python and PostgreSQL. Performed SQL data cleaning, validation and exploratory analysis. Developed a five-page interactive Power BI dashboard covering employment trends, hiring companies, locations, remote work and data quality. Analyzed 169 hiring companies, 131 distinct location values and remote-work distribution.',
+      projectLink: 'https://github.com/Manomk22/job-market-intelligence',
+      pictures: [
+        'assets/projects/job-market-intelligence.png'
       ],
       tag: [tag.POWERBI, tag.DAX, tag.ANALYTICS]
     }

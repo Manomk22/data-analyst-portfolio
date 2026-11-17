@@ -9,3 +9,22 @@
         @apply max-w-6xl px-5 mx-auto ;
     }
 }
+
+/* Portfolio color palette */
+:root {
+  --primary: #8B5CF6;
+  --primary-dark: #6D28D9;
+  --secondary: #3B82F6;
+  --accent: #FF6B6B;
+
+  --background: #F8F7FF;
+  --surface: #FFFFFF;
+  --text-primary: #17132B;
+  --text-secondary: #64748B;
+  --border-color: #E8E4F5;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}

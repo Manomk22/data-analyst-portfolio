@@ -99,3 +99,204 @@
     height: 180px;
   }
 }
+
+
+/* ======================================
+   MANOJKUMAR PORTFOLIO — VIBRANT THEME
+   ====================================== */
+
+:host {
+  display: block;
+  background: #f8f7ff;
+}
+
+.analyst-home {
+  color: #17132b;
+}
+
+/* Hero */
+.eyebrow,
+.text-link,
+.project-type {
+  color: #7c3aed;
+}
+
+.status-dot {
+  background: #ff6b6b;
+  box-shadow: 0 0 0 4px #ffe4e6;
+}
+
+.hero h1 {
+  color: #17132b;
+}
+
+.hero h1 span {
+  background: linear-gradient(110deg, #8b5cf6, #3b82f6, #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-intro,
+.section-note {
+  color: #64748b;
+}
+
+/* Buttons */
+.button {
+  transition: transform .2s, background .2s, box-shadow .2s;
+}
+
+.button-primary {
+  background: linear-gradient(110deg, #8b5cf6, #6366f1);
+  color: white;
+  box-shadow: 0 9px 24px #8b5cf633;
+}
+
+.button-primary:hover {
+  background: linear-gradient(110deg, #7c3aed, #4f46e5);
+  box-shadow: 0 12px 30px #8b5cf64d;
+}
+
+.button-secondary {
+  color: #6d28d9;
+  border-color: #ddd6fe;
+  background: white;
+}
+
+/* Skills and tags */
+.hero-tools span,
+.tag-row span {
+  color: #6d28d9;
+  border-color: #e9d5ff;
+  background: #f5f3ff;
+}
+
+/* Hero dashboard */
+.hero-visual {
+  border: 1px solid #ddd6fe;
+  background: linear-gradient(145deg, #f5f3ff, #eaf2ff);
+  box-shadow: 0 25px 70px #6d28d91a;
+}
+
+.visual-metric strong {
+  color: #17132b;
+}
+
+.visual-metric strong i {
+  color: #8b5cf6;
+}
+
+.chart-bars {
+  border-bottom-color: #d8d1f1;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    #e2ddf3 28px
+  );
+}
+
+.chart-bars span {
+  background: linear-gradient(180deg, #a78bfa, #7c3aed);
+  opacity: 1;
+}
+
+.chart-bars span:nth-child(2n) {
+  background: linear-gradient(180deg, #93c5fd, #3b82f6);
+}
+
+.chart-bars span:nth-child(3n) {
+  background: linear-gradient(180deg, #fda4af, #ff6b6b);
+}
+
+.visual-bottom b {
+  background: #8b5cf6;
+}
+
+/* Strength cards */
+.strength-card,
+.project-preview {
+  background: white;
+  border-color: #e8e4f5;
+  box-shadow: 0 4px 18px #17132b08;
+}
+
+.strength-icon {
+  color: #7c3aed;
+  background: #ede9fe;
+}
+
+.strength-card:hover,
+.project-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px #7c3aed1c;
+}
+
+.strength-card {
+  transition: transform .2s, box-shadow .2s;
+}
+
+/* Featured projects */
+.featured-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-preview-body h3 {
+  color: #17132b;
+}
+
+.project-image {
+  border-color: #e8e4f5;
+  background: #f5f3ff;
+}
+
+/* Portfolio CTA */
+.portfolio-cta {
+  background: linear-gradient(110deg, #ede9fe, #e0e7ff);
+}
+
+.portfolio-cta p {
+  color: #4c3b70;
+}
+
+/* Contact section */
+.contact-strip {
+  background: linear-gradient(115deg, #25144a, #4338ca);
+}
+
+.contact-strip .eyebrow {
+  color: #fda4af;
+}
+
+.contact-strip p:not(.eyebrow) {
+  color: #ddd6fe;
+}
+
+.button-light {
+  color: #6d28d9;
+  background: white;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.status-sparkle {
+  display: inline-block;
+  margin-right: 7px;
+  color: #8b5cf6;
+  font-size: 17px;
+  line-height: 1;
+  vertical-align: middle;
+  text-shadow: 0 0 12px #8b5cf655;
+}

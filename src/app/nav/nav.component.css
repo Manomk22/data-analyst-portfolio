@@ -1,6 +1,105 @@
-:host { display:block; }
-.site-nav { margin:0 auto 8px; border-top:1px solid #edf0f3; border-bottom:1px solid #e8edf1; background:#ffffffd9; }
-.nav-inner { max-width:1180px; margin:0 auto; padding:0 28px; display:flex; gap:29px; align-items:center; min-height:49px; }
-.nav-inner a { display:flex; align-items:center; height:49px; border-bottom:2px solid transparent; color:#687587; text-decoration:none; font-size:13px; font-weight:700; transition:color .2s; }
-.nav-inner a:hover,.nav-inner a.active { color:#087f8c; border-bottom-color:#087f8c; }
-@media(max-width:600px){ .nav-inner{padding:0 17px;gap:19px;overflow-x:auto}.nav-inner a{white-space:nowrap;font-size:12px} }
+
+:host {
+  display: block;
+}
+
+.site-nav {
+  margin: 0 auto 8px;
+  border-top: 1px solid #e8e4f5;
+  border-bottom: 1px solid #e8e4f5;
+  background: #f8f7ff;
+}
+
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-height: 54px;
+}
+
+.nav-inner a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  flex-shrink: 0;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color .25s ease;
+}
+
+/* Animated underline */
+.nav-inner a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6,
+    #ff6b6b
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .25s ease;
+}
+
+/* Hover */
+.nav-inner a:hover {
+  color: #7c3aed;
+}
+
+.nav-inner a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active page */
+.nav-inner a.active {
+  color: #6d28d9;
+  font-weight: 800;
+}
+
+.nav-inner a.active::after {
+  transform: scaleX(1);
+}
+
+/* Keyboard accessibility */
+.nav-inner a:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-inner {
+    padding: 0 17px;
+    gap: 23px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c4b5fd transparent;
+  }
+
+  .nav-inner a {
+    height: 51px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .nav-inner a,
+  .nav-inner a::after {
+    transition: none;
+  }
+}

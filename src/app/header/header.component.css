@@ -1,13 +1,144 @@
-:host { display:block; }
-.site-header { max-width:1180px; margin:0 auto; padding:24px 28px 18px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-.brand { display:flex; align-items:center; gap:12px; color:#172033; text-decoration:none; font-size:18px; font-weight:800; letter-spacing:-.4px; }
-.brand-mark { display:grid; place-items:center; width:42px; height:42px; border-radius:12px; color:#fff; background:#087f8c; font-size:21px; }
-.brand-dot { color:#087f8c; }
-.brand small { display:block; margin-top:3px; color:#82909e; font-size:8px; font-weight:800; letter-spacing:1.7px; }
-.header-right { display:flex; align-items:center; gap:20px; }
-.header-right p { margin:0; color:#718092; font-size:12px; font-weight:600; }
-.header-right p span { color:#0b9a84; padding:0 4px; }
-.social-links { display:flex; gap:9px; }
-.social-links a { display:grid; place-items:center; width:34px; height:34px; border:1px solid #e2e9ee; border-radius:9px; }
-.social-links img { width:17px; height:17px; object-fit:contain; }
-@media(max-width:600px){ .site-header{padding:18px 17px 13px}.brand{font-size:15px}.brand-mark{width:36px;height:36px}.header-right p{display:none} }
+
+:host {
+  display: block;
+  background: #f8f7ff;
+}
+
+.site-header {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 28px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #17132b;
+  text-decoration: none;
+}
+
+/* Gradient MK logo */
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  box-shadow: 0 7px 20px #8b5cf640;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(-5deg) scale(1.06);
+  box-shadow: 0 10px 25px #8b5cf655;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-name {
+  font-size: 19px;
+  font-weight: 850;
+  letter-spacing: -.6px;
+  color: #17132b;
+}
+
+.brand small {
+  display: block;
+  color: #7c3aed;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.header-skills {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.header-skills span {
+  color: #ff6b6b;
+  padding: 0 5px;
+}
+
+/* Social icons */
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e8e4f5;
+  border-radius: 11px;
+  background: white;
+  transition: transform .2s, border-color .2s,
+              box-shadow .2s;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  border-color: #a78bfa;
+  box-shadow: 0 7px 18px #8b5cf626;
+}
+
+.social-links img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 18px 17px 13px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand small {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .header-skills {
+    display: none;
+  }
+
+  .social-links a {
+    width: 34px;
+    height: 34px;
+  }
+}

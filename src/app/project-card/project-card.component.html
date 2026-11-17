@@ -7,28 +7,35 @@
     <span class="card-arrow">↗</span>
   </div>
 
-  <!-- Show the dashboard screenshot when available -->
   <div class="project-preview">
-   <img
-  *ngIf="project.pictures?.length && !imageError"
-  [src]="project.pictures[0]"
-  [alt]="project.name + ' Power BI dashboard'"
-  (error)="onImageError()"
-/>
+    <img
+      *ngIf="project.pictures?.length && !imageError"
+      [src]="project.pictures[0]"
+      [alt]="project.name + ' dashboard'"
+      (error)="onImageError()"
+    />
 
-<div
-  *ngIf="!project.pictures?.length || imageError"
-  class="card-symbol"
-  [class.symbol-coffee]="project.id === 1"
-  [class.symbol-market]="project.id === 2"
->
-  <span *ngIf="project.id === 1">☕</span>
-  <span *ngIf="project.id === 2">▥</span>
-</div>
+    <div
+      *ngIf="!project.pictures?.length || imageError"
+      class="card-symbol"
+      [class.symbol-coffee]="project.id === 1"
+      [class.symbol-market]="project.id === 2"
+      [class.symbol-jobs]="project.id === 3"
+    >
+      <span *ngIf="project.id === 1">☕</span>
+      <span *ngIf="project.id === 2">▥</span>
+      <span *ngIf="project.id === 3">▤</span>
+    </div>
   </div>
 
   <p class="project-category">
-    {{ project.id === 1 ? 'BUSINESS INTELLIGENCE' : 'RETAIL ANALYTICS' }}
+    {{
+      project.id === 1
+        ? 'BUSINESS INTELLIGENCE'
+        : project.id === 2
+        ? 'RETAIL ANALYTICS'
+        : 'JOB MARKET ANALYTICS'
+    }}
   </p>
 
   <h2>{{ project.name }}</h2>
